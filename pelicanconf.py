@@ -13,7 +13,7 @@ SITE_DESCRIPTION = '个人网站'
 TIMEZONE = 'Asia/Shanghai'
 COPYRIGHT_FROM = 1998
 COPYRIGHT_UNTIL = 2013
-DEFAULT_LANG = 'en'
+DEFAULT_LANG = 'zh_CN.UTF-8'
 SITEURL = ''
 RELATIVE_URLS = False
 #base setting
@@ -53,7 +53,7 @@ EXTRA_TEMPLATES_PATHS =[]
 IGNORE_FILES = ['#_*.*']
 PATH = 'content'
 OUTPUT_PATH = "output/"
-DELETE_OUTPUT_DIRECTORY = True
+DELETE_OUTPUT_DIRECTORY = False # must be False, for i create a git repo in output dir
 PAGE_DIR = ('pages/')
 PAGE_EXCLUDES = ()
 ARTICLE_DIR = ('posts/')
@@ -81,8 +81,8 @@ CATEGORY_SAVE_AS = 'category/{slug}/index.html'
 TAG_URL = 'tag/{slug}/'
 TAG_SAVE_AS = 'tag/{slug}/index.html'
 #<DIRECT_TEMPLATE_NAME>_SAVE_AS =
-#YEAR_ARCHIVE_URL = 
-YEAR_ARCHIVE_SAVE_AS = False
+ARCHIVES_URL = 'archives.html'
+YEAR_ARCHIVE_SAVE_AS = 'posts/archive/{date:%Y}/index.html'
 MONTH_ARCHIVE_SAVE_AS = False
 DAY_ARCHIVE_SAVE_AS = False
 
@@ -90,10 +90,10 @@ DAY_ARCHIVE_SAVE_AS = False
 #MENUITEMS = (('Home', '/'),'life', ''))
 DISPLAY_PAGES_ON_MENU = True
 DEFAULT_PAGINATION = 1
-SUMMARY_MAX_LENGTH = 10
+SUMMARY_MAX_LENGTH = 500
 THEME_STATIC_PATHS = ['static']
 #目前测过的只有ruxlite_tbs支持图片太大自适应
-THEME = '../pelican-themes/tuxlite_tbs' #Just-Read html5-dopetrope  bootstrap tuxlite_tbs
+THEME = '../pelican-themes/tuxlite_tbs' #Just-Read html5-dopetrope gum bootstrap tuxlite_tbs
 LINKS = (('Biologeek', 'http://biologeek.org'),
          ('Filyb', "http://filyb.info/"),
          ('Libert-fr', "http://www.libert-fr.com"),

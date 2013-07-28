@@ -1,4 +1,4 @@
-PY=python
+锘縋Y=python
 PELICAN=pelican
 PELICANOPTS=
 
@@ -11,6 +11,7 @@ PUBLISHCONF=$(BASEDIR)/publishconf.py
 FTP_HOST=localhost
 FTP_USER=anonymous
 FTP_TARGET_DIR=/
+
 
 SSH_HOST=git@github.com
 SSH_PORT=22
@@ -37,14 +38,35 @@ help:
 	@echo '                                                                       '
 
 
+newrepo:allclean publish
+#delete all
+#[ ! -d $(OUTPUTDIR)  ] || find $(OUTPUTDIR)  -mindepth 1  -delete 
+#${PELICAN} ${INPUTDIR} -o ${OUTPUTDIR} -s ${PUBLISHCONF} ${PELICANOPTS} #make publish
+#publish
+	cd ${OUTPUTDIR} && \
+	pwd && \
+	git init && \
+	git add -A && \
+	git commit -m "first update document" && \
+	git remote add origin $(SSH_HOST):$(SSH_TARGET_DIR) && \
+	git remote -v && \
+	echo -e "init git at `pwd` \n and add remote origin $(SSH_HOST):$(SSH_TARGET_DIR)"
+
 html: clean $(OUTPUTDIR)/index.html
 	@echo 'Done'
 
 $(OUTPUTDIR)/%.html:
 	$(PELICAN) $(INPUTDIR) -o $(OUTPUTDIR) -s $(CONFFILE) $(PELICANOPTS)
 
-clean:
+#clean all ,include .git
+allclean:
 	[ ! -d $(OUTPUTDIR)  ] || find $(OUTPUTDIR)  -mindepth 1  -delete 
+
+#clean all but  .git
+clean:
+	touch $(OUTPUTDIR)/nothing
+	find ${OUTPUTDIR}/* -maxdepth 0   -name '.git' -prune  -o   -exec rm -rf '{}' ';'
+#[ ! -d $(OUTPUTDIR)  ] || find $(OUTPUTDIR)  -mindepth 1 -name '.git' -prune -o  -exec rm -rf '{}' ';' # funtion same as clean
 
 regenerate: clean
 	$(PELICAN) -r $(INPUTDIR) -o $(OUTPUTDIR) -s $(CONFFILE) $(PELICANOPTS)
@@ -76,8 +98,13 @@ dev_push: clean
 	git add -A
 	git commit -v
 
-github: publish
-	ghp-import  $(OUTPUTDIR) #将output目录下所有commit到gh-pages分支
-	git push -v  origin gh-pages master
-
-.PHONY: html help clean regenerate serve devserver publish ssh_upload rsync_upload dropbox_upload ftp_upload github
+github: clean publish
+#find ${OUTPUTDIR}/* -maxdepth 0   -name '.git' -prune  -o   -exec rm -rf '{}' ';' #the funtion same as clean
+	cd ${OUTPUTDIR} && \
+	echo -e "now in path:`pwd`" && \
+	git add -A && \
+	git commit -m "update document" && \
+	git push -v origin master master && \
+	echo "finish"
+	
+.PHONY: html help clean regenerate serve devserver publish ssh_upload rsync_upload dropbox_upload ftp_upload github newrepo clean

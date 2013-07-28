@@ -28,30 +28,14 @@ Email: [info@cpantwerp.com](info@cpantwerp.com)
 ![preview](|filename|static/images/blue_energy_02.png)可以 
 ![preview](|filename|/static/images/blue_energy_02.png)可以 
 
-[link to lpi](|filename|/lpi.md)  
-[link to lpi](|filename|/posts/lpi.md)  
 [link to lpi](|filename|lpi.md)可以  
 [link to lpi](|filename|./lpi.md)可以  
-[link to lambda-exp](|filename|/posts/scheme/lambda-exp.md)  
-[link to lambda-exp](|filename|/scheme/lambda-exp.md)  
+
 [link to lambda-exp](|filename|scheme/lambda-exp.md)可以  
 [link to lambda-exp](|filename|./scheme/lambda-exp.md)可以  
 
 
-![link to lpi](|filename|/lpi.md)  
-![link to lpi](|filename|/posts/lpi.md)  
-![link to lpi](|filename|lpi.md)可以  
-![link to lpi](|filename|./lpi.md)可以  
-![link to lambda-exp](|filename|/posts/scheme/lambda-exp.md)  
-![link to lambda-exp](|filename|/scheme/lambda-exp.md) 
-![link to lambda-exp](|filename|scheme/lambda-exp.md)可以  
-![link to lambda-exp](|filename|./scheme/lambda-exp.md)可以  
 
-[到 learnote_1的链接](|filename|/posts/learnote_1.md)
-
-[到 learnote_1的链接](|filename|/learnote_1.md)
-
-[到 learnote_1的链接](|filename|learnote_1.md)
 We will organize a carpool, for people staying in the Conference Hotel registered through the group registration, however if you are in a nearby hotel or have booked on your own, please contact us if you wish to join the carpool.
 We will try to add you to the carpool.
 

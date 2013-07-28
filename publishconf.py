@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+﻿#!/usr/bin/env python
 # -*- coding: utf-8 -*- #
 from __future__ import unicode_literals
 
@@ -11,11 +11,11 @@ sys.path.append(os.curdir)
 from pelicanconf import *
 
 SITEURL = 'http://hmean.github.io'
-RELATIVE_URLS = False
+RELATIVE_URLS = False 
 
 FEED_RSS = 'feeds/rss.xml'
 FEED_ALL_RSS = 'feeds/all.rss.xml'
-DELETE_OUTPUT_DIRECTORY = True
+DELETE_OUTPUT_DIRECTORY = False # must be False, for i create git repo in output dir
 
 # Following items are often useful when publishing
 
