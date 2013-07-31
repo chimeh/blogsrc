@@ -1,7 +1,7 @@
 ﻿#!/usr/bin/env python
 # -*- coding: utf-8 -*- #
 from __future__ import unicode_literals
-
+from time import gmtime, strftime
 #this satting according to the document in
 #https://github.com/getpelican/pelican/blob/master/docs/settings.rs
 
@@ -9,6 +9,8 @@ AUTHOR = u"jim"
 SITENAME = u"jim\'s blog, note life"
 
 SITE_DESCRIPTION = '个人网站'
+#DEFAULT_DATE="2013-09-28"
+
 
 TIMEZONE = 'Asia/Shanghai'
 COPYRIGHT_FROM = 1998
@@ -20,6 +22,7 @@ RELATIVE_URLS = False
 DEFAULT_DATE_FORMAT ='%a %B %d %Y' #sun Jul 29 2013
 #FILENAME_METADATA = '(?P<date>\d{4}-\d{2}-\d{2})_(?P<slug>.*)'
 
+    
 LOCALE = ('usa', 'cn',  # On Windows
     'en_US', 'zh_cn'     # On Unix/Linux
     )
@@ -41,10 +44,10 @@ MARKUP = ( 'md' , 'rst' ) #byjim 必须为小括号，不能为中括号
 
 #template pages
 TEMPLATE_PAGES = None
-DIRECT_TEMPLATES = ('index', 'tags', 'categories', 'archives')
+DIRECT_TEMPLATES = ('index','archives','tags','categories') #与下面的如TAGS_URL TAGS_SAVE_AS很大关系
 PAGINATED_DIRECT_TEMPLATES = ('index',)
 EXTRA_TEMPLATES_PATHS =[]
-#TEMPLATE_PAGES = {'src/books.html': 'dest/books.html',
+#TEMPLATE_PAGES = {'/e/workspace/workspace_v5_1/pelican-blog/pelican-themes/0tingtx/templates/archives.html': 'archives.html'}
 #                 'src/resume.html': 'dest/resume.html',
 #                  'src/contact.html': 'dest/contact.html'}
 
@@ -76,24 +79,32 @@ PAGE_LANG_URL = 'pages/{slug}-{lang}/'
 PAGE_LANG_SAVE_AS = 'pages/{slug}-{lang}/index.html'
 AUTHOR_URL = 'author/{slug}/'
 AUTHOR_SAVE_AS = 'author/{slug}/index.html'
-CATEGORY_URL = 'category/{slug}/'
-CATEGORY_SAVE_AS = 'category/{slug}/index.html'
-TAG_URL = 'tag/{slug}/'
-TAG_SAVE_AS = 'tag/{slug}/index.html'
-#<DIRECT_TEMPLATE_NAME>_SAVE_AS =
-ARCHIVES_URL = 'archives.html'
-YEAR_ARCHIVE_SAVE_AS = 'posts/archive/{date:%Y}/index.html'
+
+#<DIRECT_TEMPLATE_NAME>_SAVE_AS =  注意这一行 
+CATEGORIES_URL = 'categories/'
+CATEGORIES_SAVE_AS = 'categories/index.html'
+CATEGORY_URL = 'categories/{slug}/'
+CATEGORY_SAVE_AS = 'categories/{slug}/index.html'
+
+TAGS_URL = 'tags/'
+TAGS_SAVE_AS = 'tags/index.html'
+TAG_URL = 'tags/{slug}/'           #这里到底是tags的url还是各个子tag的，测试是子tag的
+TAG_SAVE_AS = 'tags/{slug}/index.html' #tags下各个tag
+
+ARCHIVES_URL = 'archives/' 
+ARCHIVES_SAVE_AS = 'archives/index.html' 
+YEAR_ARCHIVE_SAVE_AS = 'archives/{date:%Y}/index.html' 
 MONTH_ARCHIVE_SAVE_AS = False
 DAY_ARCHIVE_SAVE_AS = False
 
 #############################THEME#############################################
-#MENUITEMS = (('Home', '/'),'life', ''))
+MENUITEMS = (('Home', '/'),('life', '/author/jim'))
 DISPLAY_PAGES_ON_MENU = True
-DEFAULT_PAGINATION = 1
-SUMMARY_MAX_LENGTH = 500
+DEFAULT_PAGINATION = 4
+SUMMARY_MAX_LENGTH = 50
 THEME_STATIC_PATHS = ['static']
 #目前测过的只有ruxlite_tbs支持图片太大自适应
-THEME = '../pelican-themes/tuxlite_tbs' #Just-Read html5-dopetrope gum bootstrap tuxlite_tbs
+THEME = '../pelican-themes/0tingtx' #Just-Read 0tingtx html5-dopetrope gum bootstrap tuxlite_tbs
 LINKS = (('Biologeek', 'http://biologeek.org'),
          ('Filyb', "http://filyb.info/"),
          ('Libert-fr', "http://www.libert-fr.com"),
