@@ -1,0 +1,57 @@
+﻿/*freq change attibute setting,other commonless Attribute was setting in base.html*/
+
+
+
+
+/* base.html */
+body {background:url('./images/retina_wood.png') repeat 0 0;}/* no-repeat; background-attachment:fixed} */
+
+/*the top nav bar */
+header {background:#fff;
+        box-shadow:2px 0 10px rgba(0,0,0,0.3);
+       height:80px;
+       opacity:0.5;}
+header .container{background:#fff;
+                 opacity:0.5;}
+
+hr {border:0px solid #7c7575}
+/**setting in article*/
+.indexmeb {margin-bottom:50px; margin-top:150px;}
+.well {margin-top:5px; margin-bottom:5px; border:1px solid #e3e3e3; background:none; }
+
+/*the center container, all the content pull in*/
+.container {background:none;
+            }
+.nav-socail li{float:left;
+              list-style:none;
+              width:129px;
+              padding:0px;
+              margin:auto;
+              padding:0px;}
+              
+.nav-socail:after {content:""; display:block; height:0; visibility:hidden; clear:both; }
+ 
+ .social {text-align:center;}
+/* Styling for Sidebar */
+.social a[href*='atom.xml']:before {content: url('./images/icons/rss.png'); margin-right: 2px; vertical-align: -3px;}
+.social a[href*='rss.xml']:before {content: url('./images/icons/rss.png'); margin-right: 2px; vertical-align: -3px;}
+
+.social a[href*='jamendo.com']:before {content: url('./images/icons/jamendo.png'); margin-right: 2px; vertical-align: -3px;}
+.social a[href*='last.fm']:before {content: url('./images/icons/lastfm.png'); margin-right: 2px; vertical-align: -3px;}
+.social a[href*='linkedin.com']:before {content: url('./images/icons/linkedin.png'); margin-right: 2px; vertical-align: -3px;}
+.social a[href*='stackoverflow.com']:before {content: url('./images/icons/stackoverflow.png'); margin-right: 2px; vertical-align: -3px;}
+.social a[href*='digg.com']:before {content: url('./images/icons/digg.png'); margin-right: 2px; vertical-align: -3px;}
+.social a[href*='flickr.com']:before {content: url('./images/icons/flickr.png'); margin-right: 2px; vertical-align: -3px; }
+.social a[href*='facebook.com']:before {content: url('./images/icons/facebook.png'); margin-right: 2px; vertical-align: -3px;}
+.social a[href*='twitter.com']:before {content: url('./images/icons/twitter.png'); margin-right: 2px; vertical-align: -3px;}
+.social a[href*='delicious.com']:before {content: url('./images/icons/delicious.png'); margin-right: 2px; vertical-align: -3px;}
+
+.social a[href*='google.com/reader']:before {content: url('./images/icons/reader.png'); margin-right: 2px; vertical-align: -3px;}
+.social a[href*='code.google.com']:before {content: url('./images/icons/phosting.png'); margin-right: 2px; vertical-align: -3px;}
+.social a[href*='activestate.com']:before {content: url('./images/icons/activestate.png'); margin-right: 2px; vertical-align: -3px;}
+.social a[href*='gitorious.org']:before {content: url('./images/icons/gitorious.png'); margin-right: 2px; vertical-align: -3px;}
+.social a[href*='bitbucket.org']:before {content: url('./images/icons/bitbucket.png'); margin-right: 2px; vertical-align: -3px;}
+.social a[href*='github.com']:before {content: url('./images/icons/github.png'); margin-right: 2px; vertical-align: -3px;}
+
+.social a[href*='weibo.com']:before {content: url('./images/icons/weibo.png'); margin-right: 2px; vertical-align: -3px;}
+.social a[href*='zhihu.com']:before {content: url('./images/icons/zhihu.png'); margin-right: 2px; vertical-align: -3px;}

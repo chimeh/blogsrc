@@ -4,12 +4,15 @@ from __future__ import unicode_literals
 from time import gmtime, strftime
 #this satting according to the document in
 #https://github.com/getpelican/pelican/blob/master/docs/settings.rs
+import os
+import sys
+sys.path.append(os.curdir)
+from notices import *
 
 AUTHOR = u"jim"
 SITENAME = u"jim\'s blog, note life"
 
 SITE_DESCRIPTION = '个人网站'
-#DEFAULT_DATE="2013-09-28"
 
 
 TIMEZONE = 'Asia/Shanghai'
@@ -19,12 +22,13 @@ DEFAULT_LANG = 'zh_CN.UTF-8'
 SITEURL = ''
 RELATIVE_URLS = False
 #base setting
-DEFAULT_DATE_FORMAT ='%a %B %d %Y' #sun Jul 29 2013
+DEFAULT_DATE_FORMAT =strftime('%Y-%m-%d/%a')
+#DEFAULT_DATE_FORMAT =' %Y-%B-%d-%a' #sun Jul 29 2013strftime('%Y-%B-%d/%a')
 #FILENAME_METADATA = '(?P<date>\d{4}-\d{2}-\d{2})_(?P<slug>.*)'
 
     
-LOCALE = ('usa', 'cn',  # On Windows
-    'en_US', 'zh_cn'     # On Unix/Linux
+LOCALE = ('zh_CN', 'zh_CN.UTF-8',  # On Windows
+    'zh_CN', 'zh_CN.UTF-8'     # On Unix/Linux
     )
 ###########################feed setting########################################
 # Feed generation is usually not desired when developing
@@ -32,7 +36,7 @@ FEED_ALL_ATOM = None
 CATEGORY_FEED_ATOM = None
 TRANSLATION_FEED_ATOM = None
 #########################Translations and Orderfing content####################
-DEFAULT_LANG = 'en'
+DEFAULT_LANG = 'cn'
 #TRANSLATION_FEED_ATOM = 'feeds/all-en.atom.xml'
 TRANSLATION_FEED_RSS = None
 #NEWEST_FIRST_ARCHIVES = True
@@ -98,10 +102,11 @@ MONTH_ARCHIVE_SAVE_AS = False
 DAY_ARCHIVE_SAVE_AS = False
 
 #############################THEME#############################################
-MENUITEMS = (('Home', '/'),('life', '/author/jim'))
+MENUITEMS = (('Aboutme', 'Aboutme/'),)
+
 DISPLAY_PAGES_ON_MENU = True
 DEFAULT_PAGINATION = 4
-SUMMARY_MAX_LENGTH = 50
+SUMMARY_MAX_LENGTH = 150
 THEME_STATIC_PATHS = ['static']
 #目前测过的只有ruxlite_tbs支持图片太大自适应
 THEME = '../pelican-themes/0tingtx' #Just-Read 0tingtx html5-dopetrope gum bootstrap tuxlite_tbs

@@ -1,0 +1,37 @@
+﻿{% extends "base.html" %}
+{% block title %}Archives{% endblock %}
+{% block content %}
+
+<section id="content">
+<ul>
+{% for article in dates %}
+	<li>{{ article.date.strftime("%Y-%m-%d") }}:<a href='{{ SITEURL }}/{{ article.url }}#begin'>{{ article.title }}</a></li>
+{% endfor %}
+</ul>
+</section>
+
+{% endblock %}
+<!-- tinxt -->
+<!-- 
+{#
+{% for year, date_year in dates|groupby( 'date.year' ) %}
+<h2>{{ year }}</h2>
+<table class="table table-bordered " style="vertical-align: middle; text-align: center; ">
+    <tbody>
+   {% for month, articles in date_year|groupby( 'date.month' ) %}
+
+<tr><td><h4><font face="verdana" color="green">{{ articles[ 0 ].date.strftime( '%B' ) }}</font></h4><td><tr>
+      {% for article in articles %}
+        <tr>
+        <td>{{ article.date.strftime("%Y-%b-%d") }}----<!-- </td> -->
+       <!--  <td> --><a href='{{ SITEURL }}/{{ CATEGORIES_URL}}/{{ article.category }}'>{{ article.category}}</a></td>
+        <td> <a href='{{ SITEURL }}/{{ article.url }}'><font color=#6C0295>{{ article.title }}</font></a></td>
+        </tr>
+      {% endfor %}
+   {% endfor %}
+    </tbody>
+</table>
+{% endfor %}
+#}
+
+ -->

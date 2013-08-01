@@ -1,0 +1,12 @@
+﻿{% extends "base.html" %}
+{% block content %}
+    <div class='article'>
+            <h1>{{ article.title }}</h1>
+{% include "metadata.html" %}
+<div>{{ article.content }}</div>
+<hr>
+<h2>Comments</h2>
+{% include "twitter.html" %}
+{% include 'disqus.html' %}
+</div>
+{% endblock %}

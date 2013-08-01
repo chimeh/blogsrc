@@ -1,0 +1,142 @@
+﻿<!DOCTYPE html>
+<!--[if lt IE 7]> <html lang="en" class="no-js ie6"> <![endif]-->
+<!--[if IE 7]>    <html lang="en" class="no-js ie7"> <![endif]-->
+<!--[if IE 8]>    <html lang="en" class="no-js ie8"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html lang='en'>
+    <!--<![endif]-->
+    <head>
+        <meta name="generator"
+        content="HTML Tidy for HTML5 (experimental) for Windows https://github.com/w3c/tidy-html5/tree/c63cc39" />
+        <meta charset='utf-8' />
+        <meta content='IE=edge,chrome=1' http-equiv='X-UA-Compatible' />
+        <title>{% block windowtitle %}{{ SITENAME }}{% endblock %}</title>
+        <meta content='' name='description' />
+        <meta content='{{ AUTHOR }}' name='author' />
+        <meta name="distribution" content="global" />
+        <meta name="language" content="en" />
+        <meta content='width=device-width, initial-scale=1.0' name='viewport' />
+        <link rel="stylesheet" href="{{ SITEURL }}/theme/bootstrap/css/bootstrap.min.css" type="text/css" media="screen" charset="utf-8" />
+        <link rel="stylesheet" href="{{ SITEURL }}/theme/bootstrap/css/bootstrap-responsive.css" type="text/css" media="screen" charset="utf-8" />
+        <link href="{{ SITEURL }}/theme/pygments.css" rel="stylesheet" />
+        <link href="{{ SITEURL }}/theme/bgcfg.css" rel="stylesheet" />
+        <!--[if lt IE 9]><script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+        <!-- Font -->
+        <link href='http://fonts.googleapis.com/css?family=Lato:100' rel='stylesheet' type='text/css' />
+        <style type="text/css" media="screen">
+                        /*Examples css*/
+			body {font-family:"Helvetica Neue",helvetica,arial,sans-serif;margin:0;padding:0;}
+			
+			header {background:#fff;box-shadow:2px 0 10px rgba(0,0,0,0.3);height:80px;margin-bottom:30px;position:fixed;left:0;top:0;width:100%;z-index:99;}
+			.container {clear:both;margin:0 auto;width:980px;}
+			.container:after {content:"\0020";display:block;height:0;clear:both;visibility:hidden;overflow:hidden;}
+                        
+                        header h1{color:#ffc600;float:left;font-family:'Lato',sans-serif;font-size:40px;letter-spacing:0.1em;margin:20px 0;
+                                  text-transform:uppercase;}
+                        header h2 {font-size:26px;font-weight:300;}
+                        header h2 a {color:#222;text-decoration:none;}
+                        header h2 a:hover {color:#888;text-decoration:none;}
+                        
+                        nav {float:right;margin:40px 0 0;}
+                        nav ul {list-style-type:none;margin:0;padding:0;}
+                        nav li {float:left;margin-left:20px;}
+                        nav a {color:#888;font-family:georgia,serif;font-size:16px;text-decoration:none;}
+                        nav .active a,
+                        nav a:hover {color:#222;}
+                        
+                        .notification {margin:230px auto 80px;width:640px;}
+                        .notification p {color:#222;font-family:georgia;font-size:38px;line-height:1.3em;margin:40px 0 0;
+                                    text-align:center;text-shadow:1px 1px #fff;}
+                        .notification .set2 {font-size:24px;margin:0 0 20px;}
+                        
+                        .centered {margin:0 auto 80px;width:560px;}
+                        #back-to-top {bottom:20px;position:fixed;right:20px;}
+         </style>  
+    </head>     <!-- end head   -->
+    
+    
+    <body>
+    <header>    <!-- begin top fix nav bar   -->
+        <div class="container">
+            <a href=" {{SITEURL}}/">
+                <h1>此处待fix</h1>
+                <nav>
+                    <ul>
+                        <li class="active">
+                            <a href="">Project</a>
+                        </li>
+                        <li>
+                            <a href="{{ SITEURL }}/{{ ARCHIVES_URL }}#begin" target="_blank">Archives</a>
+                        </li>
+                        <li>
+                            <a href="{{ SITEURL }}/{{ TAGS_URL }}#begin" target="_blank">Tags</a>
+                        </li>
+                        <li>
+                            <a href="{{ SITEURL }}/{{ CATEGORIES_URL }}#begin" target="_blank">Categories</a>
+                        </li> 
+                        {% for title, link in MENUITEMS %}
+                            <li><a href="{{ SITEURL }}/{{ link }}#begin" target="_blank">{{ title }}</a></li>
+                       {% endfor %}
+                    </ul>
+                </nav>
+            </a>
+        </div>
+    </header>     <!-- end top fix nav bar  -->
+    
+    <div class="container">  <!--  begin center container -->
+    <div class="notification">
+    <p class="set1">{{NOTICE_HEADER}}</p>
+    <p class="set2">{{NOTICE_BODY}}</p>
+    
+    <div class="centered">
+    <div class="nav-socail ">
+        <ul>
+              {% if SOCIAL %}
+               <!-- <li class="nav-header">Social</li> -->
+                     <!-- <ul class="nav nav-list"> -->
+                       
+                          {% for name, link in SOCIAL %}
+                             <li><div class="social"><a href="{{  link  }}" target="_blank">{{ name}}</a></div></li>
+                          {% endfor %}
+                       
+                    <!-- </ul> -->
+                {% endif %}
+          </ul>
+    </div>
+    </div>
+    
+    <hr>
+    
+    <a name="begin"></a>
+    <p class="set1">{% block title %} {% endblock %}</p>
+    </div>   <!--  end notification -->
+     
+    <div class="basecontent">{% block content %} {% endblock %}</div>
+    
+    <div id="back-to-top"><a href="#"><i class="icon-chevron-up icon-white"></i></a></div>  <!--  link back to top -->
+    
+    <!--jimmy modified above -->
+    <script src='/theme/js/jquery.js'></script> 
+    <script src='/theme/js/jquery.scrollto.js'></script> 
+    <script src='/theme/js/jquery.localscroll.js'></script> 
+    <script type="text/javascript" charset="utf-8">
+                        $(function(){
+                                var scrollOpts = {
+                                        queue:true,
+                                        duration:1500,
+                                        offset:-100,
+                                        hash:true
+                                };
+                                
+                                $.localScroll.hash( scrollOpts );
+                                $.localScroll( scrollOpts );
+                                
+                                $('#back-to-top').click(function(e){
+                                        $.scrollTo(0, 1500);
+                                        e.preventDefault();
+                                });
+                        });
+                
+    </script>
+    </body>
+</html>

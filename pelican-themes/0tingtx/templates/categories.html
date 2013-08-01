@@ -1,0 +1,11 @@
+﻿{% extends "base.html" %}
+{% block title %}Categories{% endblock %}
+{% block content %}
+{% if categories %}
+<ul class="circle">
+{% for category, articles in categories %}
+	<li><a href="{{ SITEURL }}/{{ category.url }}#begin">{{ category }}</a></li>
+{% endfor %}
+</ul>
+{% endif  %}   <!-- endif categories  -->           
+{% endblock content %}

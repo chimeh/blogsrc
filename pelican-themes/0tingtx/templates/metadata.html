@@ -1,0 +1,56 @@
+﻿<div class="well">
+<I>{{ article.locale_date }}</I>
+
+{% if article.author %}
+  by <a class="url fn" href="{{ SITEURL }}/{{ article.author.url }}#begin">{{ article.author }}</a>
+  {% endif %} 
+
+{% if article.category %}
+  Category:
+  <a href="{{ SITEURL }}/{{ article.category.url }}#begin">{{article.category}}</a>
+{% endif %}
+
+<!-- maybe just article.html can see but others can't below, i think this is unnecessory since above -->
+<!-- {#
+{% if category %}
+  Category--:
+  <a href="{{ SITEURL }}/{{ category.url }}">{{category}}</a>
+{% endif %}
+#} -->
+<!-- maybe just article.html can see above -->
+
+
+{% if article.tags %}
+  Tags:
+{% for tag in article.tags  %}
+	<a href="{{ SITEURL }}/{{ tag.url }}#begin">{{ tag }}</a>
+{% endfor %}
+{% endif %}
+
+<!-- both below can't work but above can. this is -->
+<!-- 
+{#
+{% if article.tags %} 
+    Tags {% for tag in article.tags %}<a href="{{ SITEURL }}/{{ tag.url }}">{{ tag }}</a> {% endfor %}
+{% endif %}
+
+{% if article.tags %}
+  Tags:
+  <a href="{{ SITEURL }}/{{ article.tags.url }}">{{ article.tags }}</a>
+{% endif %}
+#}
+ -->
+
+<!--    below can't work, since 'Category' object is not iterable , a article can't belong muti categories -->
+ <!-- 
+ {#
+{% if article.categories %}
+  Category:
+  {% for category in article.categories  %}
+  <a href="{{ SITEURL }}/{{ category.url }}">{{category}}</a>
+  {% endfor %}
+{% endif %}
+#}
+ -->
+</div>
+
