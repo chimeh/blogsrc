@@ -1,4 +1,4 @@
-blog use pelican 
+ï»¿blog use pelican 
 ==============================
-[my blog](http://hmean.github.com) 
-Î´Íê´ýÐø
+[my blog](http://hmean.github.com)
+æœªå®Œå¾…ç»­
