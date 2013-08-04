@@ -1,7 +1,6 @@
-Title: SICP 1.xx 
+Title:  SICP 1.xx学习笔记 
 Date: 2013-07-24
 tags: scheme
-# SICP 1.xx学习笔记 #
 
 
 
