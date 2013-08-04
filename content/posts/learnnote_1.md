@@ -16,7 +16,10 @@ category: pages
 
 
 
-![link to picture](|filename|../images/blue_energy_02.png)可以
+![link to picture](|filename|static/images/blue_energy_02.png)可以static/images/blue_energy_02.png)
+
+
+![link to picture](|filename| images/blue_energy_02.png)可以
 
 术语：*process*, *procedure*, *self-evaluating*, *name*, *combinations*, *special form*,  
   

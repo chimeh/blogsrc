@@ -43,7 +43,7 @@ TRANSLATION_FEED_RSS = None
 REVERSE_CATEGORY_ORDER = False
 ###############################################################################
 MD_EXTENSIONS = ['codehilite' , 'extra' , 'toc' , 'fenced_code' , 'footnotes']
-MARKUP = ( 'md' , 'rst' ) #byjim 必须为小括号，不能为中括号
+MARKUP = ( 'md' ,'markdown', 'rst', 'html', ) #byjim 必须为小括号，不能为中括号
 
 
 #template pages
@@ -66,10 +66,14 @@ PAGE_EXCLUDES = ()
 ARTICLE_DIR = ('posts/')
 ARTICLE_EXCLUDES= ('pages',)
 # this pelican version rm this value in favor of STATIX_PATHS and EXTRA_PATH_METADATA
-#FILES_TO_COPY = (('CNAME', 'CNAME'),)
-STATIC_PATHS = ["images" , "slides"] #"archives", 
-#EXTRA_PATH_METADATA = 
-FILENAME_METADATA = '(?P<date>\d{4}-\d{2}-\d{2}).*'
+FILES_TO_COPY = (('CNAME', 'CNAMES'),)
+STATIC_PATHS = ['images' , 'slides', 'extra/robots.txt',] #"archives", 
+# Take advantage of the following defaults
+# STATIC_SAVE_AS = '{path}'
+# STATIC_URL = '{path}'
+EXTRA_PATH_METADATA = {
+    'extra/robots.txt': {'path': 'robots.txt'},
+    }
 #PATH_METADATA =  ' '
 
 #url setting
@@ -90,6 +94,7 @@ CATEGORIES_SAVE_AS = 'categories/index.html'
 CATEGORY_URL = 'categories/{slug}/'
 CATEGORY_SAVE_AS = 'categories/{slug}/index.html'
 
+USE_FOLDER_AS_CATEGORY=False
 TAGS_URL = 'tags/'
 TAGS_SAVE_AS = 'tags/index.html'
 TAG_URL = 'tags/{slug}/'           #这里到底是tags的url还是各个子tag的，测试是子tag的

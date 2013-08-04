@@ -1,0 +1,24 @@
+title: NoteBooks
+date: 2013-08-03
+A **notebook** is a collection of [pages](./Pages.markdown) that are linked to each other. Typically all pages within a notebook belong to the some project; although it is also very common to have a "dump" or "scratch" notebook were all odds and ends end up.
+
+You can have multiple notebooks, for example for separate projects. Or you can have a single notebook for all your stuff. In general when you have separate groups of pages that do not interlink, it is best to put these groups in separate notebooks. That way zim remembers the state and history of each of these groups independent of the others. 
+
+See [Usage](../Usage.markdown) for more tips on how to use notebooks for specific tasks.
+
+**When you run zim for the first time** you will get asked for a new folder to store the notebook. This will now become the default notebook, everytime you start zim this notebook is opened directly. If you wish to use more than one notebook you can create additional notebooks from the "Open notebook" dialog (see the "*File*->*Open Another Notebook*" menu item).
+
+See also the notebook properties in the [Properties dialog.](./Properties.markdown)
+
+Open Notebook Dialog
+--------------------
+The "Open notebook" dialog allows you to select from multiple notebooks, or to add new notebooks. When you **add** a notebook you will be asked for the folder to store the notebook. This can either be an new (empty) folder or an existing notebook folder. 
+
+If multiple notebooks are defined and there is no default notebook the "Open notebook" dialog will show everytime you start zim.
+
+If you don't want to see the "Open notebook" dialog each time you start zim, you can set a default using the "**Set Default**" button in this dialog. The default can either be a directory or the name of one of the notebooks in the list.
+
+Notebook configuration file
+---------------------------
+In the notebook directory zim will write a configuration file called "``zim.notebook``". This file contains the settings and state that are notebook specific. You can open the notebook from your file browser by opening this config file with zim (which should be the default application).
+

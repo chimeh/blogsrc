@@ -1,0 +1,164 @@
+title: Searching
+date: 2013-08-03
+There are two kinds of searching in zim: searching within a page, this is called **Find**, and searching through multiple pages, this is called **Search**.
+
+Find
+----
+The "*Search*->*Find*..." menu item  triggers a search box at the bottom of the page. By typing a word here you can find occurrences of this word in the current page. You can use either the ``<Alt>N`` and ``<Alt>P`` or the ``<Ctrl>G`` and ``<Shift><Ctrl>G`` keybindings to go to the next/previous occurrence. If the word you type can not be found the box turns red and the buttons become insensitive.
+
+The **Match case** check-box makes the search case sensitive. The **Highlight** check-box toggles highlighting for all results in the buffer.
+
+Find and Replace
+----------------
+The "*Search*->*Replace...*" menu item triggers a dialog for find and replace in the current page. The "Next" and "Previous" buttons can be used to find the next or previous occurrence without replacing. The "Replace" button can be used to replace one occurrence only. The "Replace all" button can be used to replace all occurrences in the current page at once.
+
+The **Match case** check-box toggles case sensitivity. The search is by default not case sensitive. But it can be useful to match case when looking for names or acronyms.
+
+The **Whole word** check-box toggles whether partial word matches are included. This is especially useful when looking for rather short words.
+
+The **Regular expressions** check-box toggles advanced search and replace where "regular expressions" can be used to matched text patterns. When this option is enabled also escapes in the replacement string will be expanded and groups in the pattern can be referenced in the replacement string. See the [python documentation](http://docs.python.org/library/re.html) documentation for details on the syntax for regular expressions.
+
+The **Highlight** check-box toggles highlighting for all results in the buffer.
+
+Search
+------
+The "*Search*->*Search*..." menu item triggers the search dialog to pop up. This dialog allows you to e.g. search for pages that contain a certain word. You can have multiple search dialogs open at the same time. 
+
+You can not only search for multiple words, but zim also allows using more refined search queries. See below for the query syntax supported by this dialog for advanced usage.
+
+A normal search runs through all the pages of the notebook. Special searches, such as searching for links or namespaces, search only part of the index and are correspondingly faster, which may be important for large notebooks with hundreds to thousands of pages.
+
+Back links
+----------
+This is the last item in the Search menu. As a special case you can search for a page name. Instead of a full text search a cache lookup will be done and a list is shown of pages linking to the page you searched for. Page names are defined as words containing a ":" character in this context.
+
+When you open the "*Search*->*Search Back links*..." menu item you get the same Search dialog as with *Search* but the name of the current page is filled in already. 
+
+As an alternative you can click on the "Back links" area in the status bar, this will pop up a menu with all back links to the current page.
+
+
+Commandline usage
+-----------------
+You can also execute a search using commandline arguments, e.g.:
+
+	zim --search Notes "tag:home and tag:foo"
+
+which will print a list of all pages that contain both the [tags](./Tags.markdown) "``@home``" and "``@foo``"
+
+
+Search Query Syntax
+-------------------
+This section describes the query syntax that can be used in the search dialog.
+
+#### Summary
+
+**Operators:**
++ AND and &&	all the words  must be on the page
+OR or ||			any one of the words must be on the page
+- NOT			the page may not contain this word
+
+**Keywords:**	*details on keyword searches below*
+Content:
+Name:
+NameSpace:
+Links:
+LinksFrom:
+LinksTo:
+Tag:
+
+
+#### Details
+The Boolean operators AND NOT OR give you great flexibility in searching. If you have large, long-term notebooks, it is worth the learning curve.
+
+AND is the default: it serves to narrow your search by stipulating that 2 or more terms appear on the same page
+
+As in most search programs (e.g. Google and Yahoo) logical AND is **implied** by default: If you enter a couple of words in the search dialog zim looks for pages that contain all of these words in either in the page name or in the page contents. For multiple words an implicit AND operator is assumed. >>If you search pages containing both words foo and bar, the following queries are all equivalent:
+
+	foo bar
+	foo AND bar
+	foo and bar
+	foo && bar
+	+foo +bar
+
+To exclude pages that contain a certain word from your query prefix the word with a "-" or the NOT operator. It is the opposite of AND. So to look for pages that contain "foo" but not "bar" try one of these:
+
+	foo -bar
+	+foo -bar
+	foo NOT bar
+	foo AND NOT bar
+
+For pages that contain neither "foo" nor "bar":
+
+	-foo - bar
+	NOT foo NOT bar
+	NOT foo AND NOT bar
+
+OR is helpful is you are not sure, which exact word occurs in your text. You can enter words with similar meaning that might have occurred on the page you are looking for.
+In our example the OR operator serves for finding pages containing either "foo" or "bar" or both , so to find any pages matching "foo" or "bar" the following operators yield the same results:
+
+	foo OR bar
+	foo or bar
+	foo || bar
+
+When combining the operators AND has precedence over OR. So a query like:
+
+``foo OR bar AND dus``
+
+gives all pages that contain "dus" plus either "foo" or "bar" or both.
+
+To match phrases, i.e. strings containing whitespace (blanks), or to match things that look like operators, you need to put the string between double quotes. So when looking for a literal string "foo bar" and a literal "+1" use:
+
+``"foo bar" and "+1"``
+
+To match partial words you can use a "``*``" as wildcard. So the following query 
+
+	Some*
+
+will match all words starting with "Some", like "Someday", "Someplace" etc.
+
+
+**Keyword searches: **
+So far we just searched for words in the page contents and page names. If you want more control you can use keywords to specify a specific page property. Such searches limit the scope of the search, they are not only more specific, but in some cases also much faster than normal searches.  The keywords for defined fields of pages are:
+ 
+**Content:**
+**Name:**
+**NameSpace:**
+**Links:**
+**LinksFrom:**
+**LinksTo:**
+**Tag:**
+
+ For example to only search the page names you can use:
+
+	Name: *foo*
+
+This query only returns pages that contain "foo" in the page name without looking at their content. 
+
+The "Content:" keyword only matches page contents and excludes e.g. page names.
+
+ Content: foo AND NOT Name: *foo*
+
+will find pages that have foo written somewhere in their page content but that do not contain "foo" in the page name.
+
+The "NameSpace:" keyword limits the query to pages in the index name space below the one named . Essentially, the namespace is what you see in the index panel. The exact namespace as needed for the search is visible on the bottom left in the status bar.
+
+Suppose under Home you have the page "photo" as top level page with multiple pages below it and you want to search only the photo part of your large notebook. You want to find all entries about depth of field or its abbreviation DoF, so you type the following search: 
+
+``Namespace: Home:photo "depth of field" or dof``
+
+The "Links" and "LinksFrom" keywords return all pages linked by a certain page while "LinksTo" returns all pages that link to a certain page, this is used to find back links.
+
+To exclude all pages linking to ":Done" try:
+
+	NOT LinksTo: ":Done"
+
+A complex example would be to find any pages in the ":Date" namespace that link to ":Planning". 
+
+	namespace: Date and linksto: Planning
+
+The keyword "Tag" can be used to search for specifics tags like:
+	
+	Tag: home
+
+Note that a simple search for a single word like "``@home``" will automatically be converted to "``Tag: home``"
+

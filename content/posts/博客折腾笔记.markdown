@@ -1,0 +1,56 @@
+﻿title: 博客折腾记
+date: 2013-08-04
+Created Saturday 03 August 2013
+
+    为了在github上托管了个人博客，这些天花了不少时间和精力。其过程曲折而折腾。[网址](http://hmean.github.com) <http://hmean.github.com> 以下是主要过程。
+
+1.建仓库
+-----
+建立hmean.github.com
+github上建仓库。在github上新建一个repository，名为[用户名.github.com]或者[用户名.github.io]。github就会识别这用户在github上的page，而不是一般repository的page。
+
+2.找静态博客生成器static blog generator
+-------------------------------
+github上的jekyll使用ruby，不想用。想找个python的经过几番查找先后试过hyde，nikola都不太理想。最后是pelican，相对好起步。pelican <http://getpelican.com/>  <https://github.com/getpelican/pelican%E3%80%82>
+
+3.安装 python，pip，pelican
+-----------------------
+在windows 上安装python2.7，接着安装pip（python的一种包管理工具，相当于ubuntu下的apt）。就各种问题了。安装pip后，使用pip再安转pelican的requirment，由于实在windows下mingw32+msys环境下C编译器编译选项等不一样又是各种出错。[最后有些安装不上的包是到http://www.lfd.uci.edu/~gohlke/pythonlibs/里下的二进制包]()。
+
+4.初步试验pelican
+-------------
+打开一终端输入 pelican-quickstart 按提示最后就有了一个初步模板。
+
+5.配置pelicanconf.py pubishconf.py Makefile
+-----------------------------------------
+
+6.自己做了一个主题
+----------
+把pelican-theme clone下来，阅读了几个主题的源码，参考pelican的[doc](http://docs.getpelican.com/en/3.2/)。自己做了一个主题0tingtx。制作期间需要有大概了解了html，css前端语言的主要部分，和bootstrap前端框架。firefox浏览器对于前端开发还是很好的。
+
+7.几张漂亮的图
+--------
+下图就是使用firefox的web开发工具inspector3D显示查看google首页的html层次3D图
+![](|filename|/images/google.png)
+
+
+0tingtx图1
+![1](|filename|images/blogcr/blog_1.PNG)
+![2](|filename|/images/blogcr/blog_1.PNG)
+![3](|filename|../images/blogcr/blog_1.PNG)
+![3](../images/blogcr/blog_1.PNG)
+![4](images/blogcr/blog_1.PNG)
+![5](/images/blogcr/blog_1.PNG)
+![6](../images/blogcr/blog_1.PNG)
+![7](/static/images/blogcr/blog_1.PNG)
+![8](./static/images/blogcr/blog_1.PNG)
+
+0tingtx图2
+![](/static/images/blogcr/blog_2.PNG)
+
+0tingtx图3
+![](|filename|/images/blog_3.PNG)
+
+
+
+
