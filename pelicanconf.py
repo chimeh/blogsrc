@@ -48,8 +48,8 @@ MARKUP = ( 'md' ,'markdown', 'rst', 'html', ) #byjim 必须为小括号，不能
 
 #template pages
 TEMPLATE_PAGES = None
-DIRECT_TEMPLATES = ('index','archives','tags','categories') #与下面的如TAGS_URL TAGS_SAVE_AS很大关系
-PAGINATED_DIRECT_TEMPLATES = ('index',)
+DIRECT_TEMPLATES = ('index', 'archives','tags','categories') #与下面的如TAGS_URL TAGS_SAVE_AS很大关系
+#PAGINATED_DIRECT_TEMPLATES = ('index',)
 EXTRA_TEMPLATES_PATHS =[]
 #TEMPLATE_PAGES = {'../pelican-themes/0tingtx/welcome.html': 'welcome/welcome.html'}
 #                 'src/resume.html': 'dest/resume.html',
@@ -62,6 +62,8 @@ MENUITEMS = (('Welcome'), ('Aboutme'),) #菜单过滤器，这些页面一般放
 #<DIRECT_TEMPLATE_NAME>_SAVE_AS =  注意这一行 
 # WELCOME_SAVE_AS = 'index.html'
 # WELCOME_URL = '/'
+INDEX_URL = 'allarticles' 
+INDEX_SAVE_AS = 'allarticles/index.html'
 CATEGORIES_URL = 'categories/'
 CATEGORIES_SAVE_AS = 'categories/index.html'
 CATEGORY_URL = 'categories/{slug}/'
@@ -136,11 +138,11 @@ SOCIAL = (('zhihu', 'http://www.zhihu.com/people/basemeaning'),
 PLUGIN_PATH = '../pelican-plugins'
 PLUGINS = [ 'sitemap',
             'multi_part',
-#            'better_figures_and_images'
           ]
-#           'gzip_cache',            'disqus_static'
+#            'better_figures_and_images'
+#           'gzip_cache',            
 #RESPONSIVE_IMAGES = True
-          
+DISQUS_SITENAME = 'blog-git'
 
 SITEMAP = {
     'format': 'xml',

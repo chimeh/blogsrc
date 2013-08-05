@@ -1,5 +1,5 @@
-﻿URL: welcome.html
-save_as: welcome.html
+﻿URL: 
+save_as: index.html
 Template: welcome
 title: Welcome
 Date: 2013-08-05
@@ -13,4 +13,6 @@ Date: 2013-08-05
 <img alt="link to picture" src="static/images/welcome/2013-07-22-271.jpg" />
 <img alt="link to picture" src="static/images/welcome/2013-07-25-278.jpg" />
 <img alt="link to picture" src="static/images/welcome/2013-07-22-270_2.jpg" />
+<img alt="link to picture" src="static/images/welcome/wiki1.jpg" />
+<img alt="link to picture" src="static/images/welcome/wiki2.jpg" />
 </div>
