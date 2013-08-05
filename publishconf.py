@@ -19,5 +19,5 @@ DELETE_OUTPUT_DIRECTORY = False # must be False, for i create git repo in output
 
 # Following items are often useful when publishing
 
-#DISQUS_SITENAME = ""
-#GOOGLE_ANALYTICS = ""
+DISQUS_SITENAME = "hmean"
+GOOGLE_ANALYTICS = "UA-42963057-1"

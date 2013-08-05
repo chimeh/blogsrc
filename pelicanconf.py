@@ -12,7 +12,7 @@ from notices import *
 AUTHOR = u"jim"
 SITENAME = u"jim\'s blog, note life"
 
-SITE_DESCRIPTION = '个人网站'
+SITE_DESCRIPTION = 'jim\'s blog'
 
 
 TIMEZONE = 'Asia/Shanghai'
@@ -142,7 +142,7 @@ PLUGINS = [ 'sitemap',
 #            'better_figures_and_images'
 #           'gzip_cache',            
 #RESPONSIVE_IMAGES = True
-DISQUS_SITENAME = 'blog-git'
+DISQUS_SITENAME = '' #reconfig at publish.py 
 
 SITEMAP = {
     'format': 'xml',
