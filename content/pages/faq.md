@@ -5,7 +5,7 @@ Slug: faq
 lang: zh
 author: jim
 category: pages
-
+menutitle: faQ_m
 Social media & Contacts
 ------------------------
 [gmail]
