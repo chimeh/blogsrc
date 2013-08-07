@@ -10,9 +10,9 @@ sys.path.append(os.curdir)
 from notices import *
 
 AUTHOR = u"jim"
-SITENAME = u"jim\'s blog, note life"
+SITENAME = u"hmean\'s blog, note life"
 
-SITE_DESCRIPTION = 'jim\'s blog'
+SITE_DESCRIPTION = 'hmean\'s blog 博客 记录 技术 生活 linux 嵌入式 半导体 互联网'
 
 
 TIMEZONE = 'Asia/Shanghai'
@@ -104,8 +104,8 @@ PAGE_EXCLUDES = ()
 ARTICLE_DIR = ('posts/')
 ARTICLE_EXCLUDES= ('pages',)
 # this pelican version rm this value in favor of STATIX_PATHS and EXTRA_PATH_METADATA
-FILES_TO_COPY = (('CNAME', 'CNAME'),)
-STATIC_PATHS = ['images' , 'slides', 'pdf', 'extra/robots.txt',] #"archives", 
+FILES_TO_COPY = (('CNAME', 'CNAME'),('baidu_verify_SWIfxtHzAF.html','baidu_verify_SWIfxtHzAF.html'))
+STATIC_PATHS = ['images' , 'slides', 'pdf', ] #"archives", 
 # Take advantage of the following defaults
 # STATIC_SAVE_AS = '{path}'
 # STATIC_URL = '{path}'
@@ -122,12 +122,7 @@ SUMMARY_MAX_LENGTH = 150
 THEME_STATIC_PATHS = ['static']
 #目前测过的只有ruxlite_tbs支持图片太大自适应
 THEME = '../pelican-themes/0tingtx' #Just-Read 0tingtx html5-dopetrope gum bootstrap tuxlite_tbs
-LINKS = (('Biologeek', 'http://biologeek.org'),
-         ('Filyb', "http://filyb.info/"),
-         ('Libert-fr', "http://www.libert-fr.com"),
-         ('N1k0', "http://prendreuncafe.com/blog/"),
-         ('Tarek Ziadé', "http://ziade.org/blog"),
-         ('Zubin Mithra', "http://zubin71.wordpress.com/"),)
+
 
 SOCIAL = (('zhihu', 'http://www.zhihu.com/people/basemeaning'),
           ('weibo', 'http://weibo.com/'),
