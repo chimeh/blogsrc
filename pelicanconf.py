@@ -105,7 +105,7 @@ ARTICLE_DIR = ('posts/')
 ARTICLE_EXCLUDES= ('pages',)
 # this pelican version rm this value in favor of STATIX_PATHS and EXTRA_PATH_METADATA
 FILES_TO_COPY = (('CNAME', 'CNAME'),('baidu_verify_SWIfxtHzAF.html','baidu_verify_SWIfxtHzAF.html'))
-STATIC_PATHS = ['images' , 'slides', 'pdf', ] #"archives", 
+STATIC_PATHS = ['images' , 'slides', 'pdf', 'music' ] #"archives", 
 # Take advantage of the following defaults
 # STATIC_SAVE_AS = '{path}'
 # STATIC_URL = '{path}'
