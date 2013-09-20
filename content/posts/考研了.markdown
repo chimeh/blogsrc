@@ -1,5 +1,6 @@
-Title: 博客建立记
-Date: 2013-08-01
-Category: 技术
+﻿Title: 考研了
+Date: 2013-09-01
+Category: 公告
 
-
+考研了，没时间更新了。
+![考研_notice ^_^](/static/images/blogcr/kaoyanle_notice.png)  

@@ -51,17 +51,19 @@ TEMPLATE_PAGES = None
 DIRECT_TEMPLATES = ('index', 'archives','tags','categories') #与下面的如TAGS_URL TAGS_SAVE_AS很大关系
 #PAGINATED_DIRECT_TEMPLATES = ('index',)
 EXTRA_TEMPLATES_PATHS =[]
-#TEMPLATE_PAGES = {'../pelican-themes/0tingtx/welcome.html': 'welcome/welcome.html'}
+#TEMPLATE_PAGES = {'pages/resume.html': 'pages/resume.html'}
 #                 'src/resume.html': 'dest/resume.html',
 #                  'src/contact.html': 'dest/contact.html'}
 
 #############################################################################
 DISPLAY_PAGES_ON_MENU = True  #think its redundancy, 合并到MENUITEMS，在0tingtx没有实现
-MENUITEMS = (('Welcome'), ('Aboutme'),) #菜单过滤器，这些页面一般放在pages下且同名,URL SAVE_AS由pages里显式指定,否则有page url规则
+MENUITEMS = (('Welcome'), ('Resume'),) #菜单过滤器，这些页面一般放在pages下且同名,URL SAVE_AS由pages里显式指定,否则有page url规则
 
 #<DIRECT_TEMPLATE_NAME>_SAVE_AS =  注意这一行 
 # WELCOME_SAVE_AS = 'index.html'
 # WELCOME_URL = '/'
+RESUME_URL ='resume/'
+RESUME_URL_SAVE_AS ='resume/index.html'
 INDEX_URL = 'allarticles' 
 INDEX_SAVE_AS = 'allarticles/index.html'
 CATEGORIES_URL = 'categories/'
@@ -85,8 +87,8 @@ ARTICLE_URL = 'posts/{date:%Y}/{date:%m}-{date:%d}/{slug}-{lang}/'
 ARTICLE_SAVE_AS = 'posts/{date:%Y}/{date:%m}-{date:%d}/{slug}-{lang}/index.html'
 ARTICLE_LANG_URL = 'posts/{date:%Y}/{date:%m}-{date:%d}/{slug}-{lang}/'
 ARTICLE_LANG_SAVE_AS = 'posts/{date:%Y}/{date:%m}-{date:%d}/{slug}-{lang}/index.html'
-PAGE_URL = 'pages/{title}-{lang}/'
-PAGE_SAVE_AS = 'pages/{title}-{lang}/index.html'
+PAGE_URL = 'pages/{title}/'
+PAGE_SAVE_AS = 'pages/{title}/index.html'
 PAGE_LANG_URL = 'pages/{title}-{lang}/'
 PAGE_LANG_SAVE_AS = 'pages/{title}-{lang}/index.html'
 AUTHOR_URL = 'author/{slug}/'
@@ -104,14 +106,18 @@ PAGE_EXCLUDES = ()
 ARTICLE_DIR = ('posts/')
 ARTICLE_EXCLUDES= ('pages',)
 # this pelican version rm this value in favor of STATIX_PATHS and EXTRA_PATH_METADATA
-FILES_TO_COPY = (('CNAME', 'CNAME'),('baidu_verify_SWIfxtHzAF.html','baidu_verify_SWIfxtHzAF.html'))
+FILES_TO_COPY = (('CNAME', 'CNAME'),
+                 ('baidu_verify_SWIfxtHzAF.html', 'baidu_verify_SWIfxtHzAF.html'),
+                 ('extra/resume.html', 'resume/index.html'),
+                 ('extra/resume.pdf', 'resume/index.pdf'),)
 STATIC_PATHS = ['images' , 'slides', 'pdf', 'music' ] #"archives", 
 # Take advantage of the following defaults
 # STATIC_SAVE_AS = '{path}'
 # STATIC_URL = '{path}'
-EXTRA_PATH_METADATA = {
-    'extra/robots.txt': {'path': 'robots.txt'},
-    }
+#EXTRA_PATH_METADATA = {
+#    'extra/robots.txt': {'path': 'robots.txt'},
+#    'extra/resume.html': {'path': 'pages/Resume-zh/index.html'}
+#    }
 #PATH_METADATA =  ' '
 
 
