@@ -109,7 +109,7 @@ ARTICLE_EXCLUDES= ('pages',)
 FILES_TO_COPY = (('CNAME', 'CNAME'),
                  ('baidu_verify_SWIfxtHzAF.html', 'baidu_verify_SWIfxtHzAF.html'),
                  ('extra/resume.html', 'resume/index.html'),
-                 ('extra/resume.pdf', 'resume/index.pdf'),)
+                 ('extra/resume.pdf', 'resume/resume.pdf'),)
 STATIC_PATHS = ['images' , 'slides', 'pdf', 'music' ] #"archives", 
 # Take advantage of the following defaults
 # STATIC_SAVE_AS = '{path}'
@@ -139,9 +139,9 @@ SOCIAL = (('zhihu', 'http://www.zhihu.com/people/basemeaning'),
 PLUGIN_PATH = '../pelican-plugins'
 PLUGINS = [ 'sitemap',
             'multi_part',
+           'gzip_cache',            
           ]
 #            'better_figures_and_images'
-#           'gzip_cache',            
 #RESPONSIVE_IMAGES = True
 DISQUS_SITENAME = '' #reconfig at publish.py 
 
