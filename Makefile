@@ -1,4 +1,4 @@
-﻿PY=python
+PY=python
 PELICAN=pelican
 PELICANOPTS=
 
@@ -65,7 +65,7 @@ allclean:
 #clean all but  .git
 clean:
 	touch $(OUTPUTDIR)/nothing
-	find ${OUTPUTDIR}/* -maxdepth 0   -name '.git' -prune  -o   -exec rm -rf '{}' ';'
+	find ${OUTPUTDIR}/* -maxdepth 0   -name '.git'  -prune  -o -name 'static'  -prune  -o   -exec rm -rf '{}' ';'
 #[ ! -d $(OUTPUTDIR)  ] || find $(OUTPUTDIR)  -mindepth 1 -name '.git' -prune -o  -exec rm -rf '{}' ';' # funtion same as clean
 
 regenerate: clean

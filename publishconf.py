@@ -17,6 +17,12 @@ FEED_RSS = 'feeds/rss.xml'
 FEED_ALL_RSS = 'feeds/all.rss.xml'
 DELETE_OUTPUT_DIRECTORY = False # must be False, for i create git repo in output dir
 
+#发布时启动压缩
+PLUGIN_PATH = '../pelican-plugins'
+PLUGINS = [ 'sitemap',
+            'multi_part',
+           'gzip_cache',            
+          ]
 # Following items are often useful when publishing
 
 DISQUS_SITENAME = "hmean"

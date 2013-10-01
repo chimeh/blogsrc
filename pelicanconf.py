@@ -4,10 +4,13 @@ from __future__ import unicode_literals
 from time import gmtime, strftime
 #this satting according to the document in
 #https://github.com/getpelican/pelican/blob/master/docs/settings.rs
+import sys 
+reload(sys) 
+sys.setdefaultencoding('utf8') 
 import os
 import sys
 sys.path.append(os.curdir)
-from notices import *
+#from notices import *
 
 AUTHOR = u"jim"
 SITENAME = u"hmean\'s blog, note life"
@@ -108,38 +111,45 @@ ARTICLE_EXCLUDES= ('pages',)
 # this pelican version rm this value in favor of STATIX_PATHS and EXTRA_PATH_METADATA
 FILES_TO_COPY = (('CNAME', 'CNAME'),
                  ('baidu_verify_SWIfxtHzAF.html', 'baidu_verify_SWIfxtHzAF.html'),
+                 ('extra/robots.txt', 'robots.txt'),
                  ('extra/resume.html', 'resume/index.html'),
                  ('extra/resume.pdf', 'resume/resume.pdf'),)
-STATIC_PATHS = ['images' , 'slides', 'pdf', 'music' ] #"archives", 
+STATIC_PATHS = ['extra',]#'images' , 'slides', 'pdf', 'music', ] #"archives", 
 # Take advantage of the following defaults
 # STATIC_SAVE_AS = '{path}'
 # STATIC_URL = '{path}'
-#EXTRA_PATH_METADATA = {
-#    'extra/robots.txt': {'path': 'robots.txt'},
-#    'extra/resume.html': {'path': 'pages/Resume-zh/index.html'}
-#    }
+EXTRA_PATH_METADATA = {
+#    'images/([\s\S]*) ': {'path': 'static/images'},
+#    'slides/([\s\S]*) ': {'path': 'static/slides'},
+#    'pdf/([\s\S]*) ': {'path': 'static/pdf'},
+#    'music/([\s\S]*) ': {'path': 'static/music'},
+     'extra/robots.txt': {'path':  'robots.txt'},
+    'extra/resume.html': {'path': 'resume/index.html'},
+    'extra/resume.pdf': {'path': 'resume/resume.pdf'}
+    }
 #PATH_METADATA =  ' '
 
 
 
 #############################THEME#############################################
 DEFAULT_PAGINATION = 4
-SUMMARY_MAX_LENGTH = 150
+SUMMARY_MAX_LENGTH = 25
 THEME_STATIC_PATHS = ['static']
 #目前测过的只有ruxlite_tbs支持图片太大自适应
-THEME = '../pelican-themes/0tingtx' #Just-Read 0tingtx html5-dopetrope gum bootstrap tuxlite_tbs
+THEME = '../pelican-themes/0bootwatch' #Just-Read 0tingtx html5-dopetrope gum bootstrap tuxlite_tbs 0bootwatch
 
 
-SOCIAL = (('zhihu', 'http://www.zhihu.com/people/basemeaning'),
-          ('weibo', 'http://weibo.com/'),
+SOCIAL = (
           ('github', 'http://github.com/hmean'),
+          ('stackoverflow', 'http://stackoverflow.com/users/2831802/hmean'),
+          ('zhihu', 'http://www.zhihu.com/people/basemeaning'),
           ('flickr', 'http://www.flickr.com/'),)
 
 #########################Plugins###############################################
 PLUGIN_PATH = '../pelican-plugins'
 PLUGINS = [ 'sitemap',
             'multi_part',
-           'gzip_cache',            
+#           'gzip_cache',            
           ]
 #            'better_figures_and_images'
 #RESPONSIVE_IMAGES = True
