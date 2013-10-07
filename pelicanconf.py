@@ -10,12 +10,12 @@ sys.setdefaultencoding('utf8')
 import os
 import sys
 sys.path.append(os.curdir)
-#from notices import *
+#from statistics import *
 
 AUTHOR = u"jim"
-SITENAME = u"hmean\'s blog, note life"
+SITENAME = u"hmean\'s blog"
 
-SITE_DESCRIPTION = 'hmean\'s blog 博客 记录 技术 生活 linux 嵌入式 半导体 互联网'
+SITE_DESCRIPTION = 'hmean\'s blog 博客 记录 技术 生活 linux 嵌入式 半导体 互联网 pelican python'
 
 
 TIMEZONE = 'Asia/Shanghai'
@@ -61,6 +61,8 @@ EXTRA_TEMPLATES_PATHS =[]
 #############################################################################
 DISPLAY_PAGES_ON_MENU = True  #think its redundancy, 合并到MENUITEMS，在0tingtx没有实现
 MENUITEMS = (('Welcome'), ('Resume'),) #菜单过滤器，这些页面一般放在pages下且同名,URL SAVE_AS由pages里显式指定,否则有page url规则
+NOWELCOME = True
+JUMPTO = 'allarticles'
 
 #<DIRECT_TEMPLATE_NAME>_SAVE_AS =  注意这一行 
 # WELCOME_SAVE_AS = 'index.html'
@@ -110,7 +112,7 @@ ARTICLE_DIR = ('posts/')
 ARTICLE_EXCLUDES= ('pages',)
 # this pelican version rm this value in favor of STATIX_PATHS and EXTRA_PATH_METADATA
 FILES_TO_COPY = (('CNAME', 'CNAME'),
-                 ('baidu_verify_SWIfxtHzAF.html', 'baidu_verify_SWIfxtHzAF.html'),
+#                 ('baidu_verify_SWIfxtHzAF.html', 'baidu_verify_SWIfxtHzAF.html'),
                  ('extra/robots.txt', 'robots.txt'),
                  ('extra/resume.html', 'resume/index.html'),
                  ('extra/resume.pdf', 'resume/resume.pdf'),)
