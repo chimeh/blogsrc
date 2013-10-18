@@ -61,14 +61,14 @@ EXTRA_TEMPLATES_PATHS =[]
 #############################################################################
 DISPLAY_PAGES_ON_MENU = True  #think its redundancy, 合并到MENUITEMS，在0tingtx没有实现
 MENUITEMS = (('Welcome'), ('Resume'),) #菜单过滤器，这些页面一般放在pages下且同名,URL SAVE_AS由pages里显式指定,否则有page url规则
-NOWELCOME = True
+NOWELCOME = False #控制有没有welcome页面，没有跳转到JUMPTO
 JUMPTO = 'allarticles'
 
 #<DIRECT_TEMPLATE_NAME>_SAVE_AS =  注意这一行 
 # WELCOME_SAVE_AS = 'index.html'
 # WELCOME_URL = '/'
-RESUME_URL ='resume/'
-RESUME_URL_SAVE_AS ='resume/index.html'
+RESUME_URL ='resume/resume-zh.html'
+    
 INDEX_URL = 'allarticles' 
 INDEX_SAVE_AS = 'allarticles/index.html'
 CATEGORIES_URL = 'categories/'
@@ -114,8 +114,10 @@ ARTICLE_EXCLUDES= ('pages',)
 FILES_TO_COPY = (('CNAME', 'CNAME'),
 #                 ('baidu_verify_SWIfxtHzAF.html', 'baidu_verify_SWIfxtHzAF.html'),
                  ('extra/robots.txt', 'robots.txt'),
-                 ('extra/resume.html', 'resume/index.html'),
-                 ('extra/resume.pdf', 'resume/resume.pdf'),)
+                 ('extra/resume-zh.html', 'resume/resume-zh.html'),
+                 ('extra/resume-en.html', 'resume/resume-en.html'),
+                 ('extra/resume-zh.pdf', 'resume/resume-zh.pdf'),
+                 ('extra/resume-en.pdf', 'resume/resume-en.pdf'),)
 STATIC_PATHS = ['extra',]#'images' , 'slides', 'pdf', 'music', ] #"archives", 
 # Take advantage of the following defaults
 # STATIC_SAVE_AS = '{path}'
@@ -126,8 +128,10 @@ EXTRA_PATH_METADATA = {
 #    'pdf/([\s\S]*) ': {'path': 'static/pdf'},
 #    'music/([\s\S]*) ': {'path': 'static/music'},
      'extra/robots.txt': {'path':  'robots.txt'},
-    'extra/resume.html': {'path': 'resume/index.html'},
-    'extra/resume.pdf': {'path': 'resume/resume.pdf'}
+    'extra/resume-zh.html': {'path': 'resume/resume-zh.html'},
+    'extra/resume-en.html': {'path': 'resume/resume-en.html'},
+    'extra/resume-zh.pdf': {'path': 'resume/resume-zh.pdf'},
+    'extra/resume-en.pdf': {'path': 'resume/resume-en.pdf'}
     }
 #PATH_METADATA =  ' '
 
